@@ -9,7 +9,7 @@ Then program call to start method of Dispatch, and this method to run.
 
 - When queue is empty, i put a sleep with a time and retry the process.
 
-- When you input a message quantity great than 10, fist 10 threads (messages) have the maximum priority and the rest less priority of them.  Threads with less priority have a mark (delayed).  Threads with delayed mark execute method yield for wait and put again to ready to execute while others threads end to run.
+- When you input a message quantity great than 10, first 10 threads (messages) have the maximum priority and the rest less priority of them.  Threads with less priority have a mark (delayed).  Threads with delayed mark execute method yield for wait and put again to ready to execute while others threads end to run.
 
 *** I didn’t use before threads in Java, i used gears with Grails, bug i know class Thread and read theory for make the exercise.  I would like discuss the exercise with you.  Thanks.
 

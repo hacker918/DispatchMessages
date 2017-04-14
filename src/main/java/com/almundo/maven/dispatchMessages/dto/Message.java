@@ -4,8 +4,8 @@ import com.almundo.maven.dispatchMessages.enums.MessageProcessType;
 
 public class Message {
 	private String messageDetail;
-	private Employee assignedEmployee;
-	private MessageProcessType processType;
+	private Employee assignedEmployee; //the employee that served the message
+	private MessageProcessType processType; //can be immediate or delay
 	
 	public Message(String messageDetail){
 		this.messageDetail = messageDetail;

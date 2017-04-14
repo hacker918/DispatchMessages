@@ -5,7 +5,7 @@ import com.almundo.maven.dispatchMessages.enums.EmployeeType;
 public class Employee {
 	
 	private String employeeName;
-	private EmployeeType employeeType;
+	private EmployeeType employeeType; //the position of the employee in the company
 	
 	public Employee(String employeeName, EmployeeType employeeType){
 		this.employeeName = employeeName;

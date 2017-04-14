@@ -18,6 +18,7 @@ public class App
 {
 	/**
 	 * Initialize a queue with employees, a messages list and dispatch the messages
+	 * first messages are served by operators, else supervisors, else directors
 	 * @param args
 	 */
     public static void main( String[] args )
@@ -88,14 +89,14 @@ public class App
     	queue.put(emp2);
     	queue.put(emp3);
     	
-    	/*checking the order...*/
-    	/*while(!queue.isEmpty()){
-    		Employee emp = (Employee)queue.peek();
-    		System.out.println(emp.getEmployeeName() +" "+emp.getEmployeeType().getEmployeeType());
-    		queue.poll();
-        }*/
     }
     
+    /**
+     * Get messages quantity from console
+     * Only is possible set an integer between 1 and 100
+     * The maximum ideal messages are 10
+     * @return
+     */
     private static int getMessagesQuantity(){
     	int messageQuantity = 0;
     	boolean numberIsOk = false;
@@ -118,12 +119,13 @@ public class App
      * Set messages in an array.  
      * If messageQuantity is more than Dispatcher can process, the message will be processed with delay
      * @param messages
+     * @param messageQuantity
      */
     private static void setMessagesToProcess(List <Message>messages, int messageQuantity){
     	
     	for(int i=1; i<=messageQuantity; i++){
     		Message msg = new Message("Mensaje "+i);
-    		if(i < DispatchMessagesConstants.maxQuantityMessagesToProcess){
+    		if(i <= DispatchMessagesConstants.maxQuantityMessagesToProcess){
     			msg.setProcessType(MessageProcessType.IMMEDIATLY);
     		}else{
     			msg.setProcessType(MessageProcessType.DELAYED);
